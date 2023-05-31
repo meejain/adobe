@@ -184,6 +184,258 @@ var newelement=document.createElement('p');
 newelement.setAttribute('id',"new para");
 newelement.hidden=true;
 
+==========================================================
+JSON Arrays - 
+
+convert JSON string into JSON Object - 
+
+var text = JSON String;
+
+var obj=JSON.parse(text);
+
+eg - JSON Object - 
+
+var obj = {
+  mobile: [
+    { id: 1, name: 'iPhone', price: 124447.44, category: 'mobile' },
+    { id: 3, name: 'OnePlus 6', price: 98444.44, category: 'mobile' }
+  ],
+  tv: [
+    { id: 2, name: 'Onida', price: 4444.44, category: 'tv' },
+    { id: 5, name: 'Samsung', price: 68000, category: 'tv' }
+  ],
+  computer: [
+    {
+      id: 4,
+      name: 'HDMI connector',
+      price: 2444,
+      category: 'computer'
+    }
+  ]
+}
+
+
+
+we can use something like - 
+
+<p id="demo">hey</p>
+
+document.getElementById("demo").innerHTML=obj.mobile[1].name;
+
+============================================
+
+JS great example of map and reduce - 
+
+
+
+  var products = [
+    { "id": 1, "name": "iPhone", "price": 124447.44, "category": "mobile" },
+    { "id": 2, "name": "Onida", "price": 4444.44, "category": "tv" },
+    { "id": 3, "name": "OnePlus 6", "price": 98444.44, "category": "mobile" },
+    { "id": 4, "name": "HDMI connector", "price": 2444.00, "category": "computer" },
+    { "id": 5, "name": "Samsung", "price": 68000.00, "category": "tv" }
+];
+
+let result= products.filter((x)=>{return x.category==="mobile"}).map((y)=>{return y.price}).reduce((accum,current)=>{accum=accum+current; return accum;},0);
+
+console.log(result);
+
+let result1=(pro,key)=> {return pro.reduce((accum,current)=> {
+if (! accum[current[key]]) {accum[current[key]]=[];}
+accum[current[key]].push(current);
+return accum;
+},{});}
+
+console.log(result1(products,"category"));
+
+
+=========================================================================
+
+Footer - 
+
+HTML - 
+<footer> <small> Copyright </small> </footer>
+
+CSS - 
+footer {
+  text-align: center;
+  padding: 5px;
+  background-color: lightblue;
+  color: white;
+}
+
+==================================================
+
+CSS - 
+
+Inline - 
+
+<html style = "background: blue"> </html>
+
+
+Internal - 
+
+<head>
+
+<style>
+
+html {
+
+     }
+
+ </style>
+
+ </head>
+
+
+
+ External - <link rel="stylesheet" href="css/styles.css" >
+
+ =================================================
+
+ <p draggable="true"> drag me </p>
+
+ CSS - p[draggable="true"]{
+
+                          }
+
+
+li[value]{} - Will target all li's with value attribute
+
+li[value=2]{ } = will target only that li which has got <li value=2>
+
+=================================================
+
+CSS - 1em: 100% of parent font
+      1rem: 100% of root - html 
+
+=============================================
+CSS
+
+fonts.google.com - placed below style tag within head tag
+
+=============================================
+<div> at the center - CSS
+
+width: 50%
+text-align: center
+margin-left: 25%
+margin-top:
+
+============================================
+
+CSS - 
+
+border-radius: 50% 
+
+for circle 
+
+=========================================
+
+CSS - grid - 
+
+<div class="container">
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+</div>
+
+.grid-container{
+  display: grid;
+  grid-template-columns:1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+}
+
+
+.container{
+  display: grid;
+  grid-template-columns:100px 200px;
+  grid-template-rows: 400px 800px;
+  gap: 30px;
+}
+
+The above can be written as - 
+
+.container{
+  display: grid;
+  grid-template: 400px 800px / 100px 200px;
+  gap: 30px;
+}
+
+
+.container{
+	display: grid;
+  grid-template: repeat(8,1fr);
+  gap: 30px;
+}
+
+
+grid-auto-rows: 300px; 
+
+grid-column: span 2;
+
+the above can be written as - 
+
+grid-column-start: span 2;
+grid-column-end: auto;
+
+
+order: 1 - to consider below the grid
+
+OR
+
+grid-column-start: value;
+grid-column-end: value;
+grid-row-start: value;
+grid-row-end: value;
+
+OR
+
+grid-area: rowstartvalue/columnstartvalue/rowendvalue/columnendvalue
+
+================================================================
+
+
+
+
+
+
+
+
+
+=============================================
+
+CSS - turn off the bullet points - 
+
+li {
+	list-style: none;
+}
+
+==========================================
+
+flex: 1 1 0; 
+
+flex grow 
+flex shrink
+flex base 
+
+flex base > flex grow
+
+=============================================
+
+
+
+
+
+
+
+
+
+
+
 
 
 
